@@ -385,7 +385,7 @@ export function Hero() {
         >
           <div data-reveal>
             <div style={statNumber("var(--lime)")}>
-              <span data-count="8" data-pad="1">
+              <span data-count="10+" data-pad="1" data-suffix="+">
                 00
               </span>
             </div>
