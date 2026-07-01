@@ -31,6 +31,16 @@ const tagStyle: CSSProperties = {
   color: "var(--ink2)",
 };
 
+/**
+ * Returns an embeddable iframe URL for hosted demos (e.g. Loom), or null for
+ * direct video files that should play in a native <video> element.
+ */
+function embedUrl(demo: string): string | null {
+  const loom = demo.match(/loom\.com\/(?:share|embed)\/([\w-]+)/);
+  if (loom) return `https://www.loom.com/embed/${loom[1]}`;
+  return null;
+}
+
 function ProjectCard({
   p,
   onOpen,
@@ -281,6 +291,7 @@ function ProjectModal({
   }, [onClose]);
 
   const titleId = "project-modal-title";
+  const demoEmbed = project.demo ? embedUrl(project.demo) : null;
 
   return (
     <div
@@ -366,7 +377,23 @@ function ProjectModal({
               }}
             />
           )}
-          {project.demo ? (
+          {demoEmbed ? (
+            <iframe
+              src={demoEmbed}
+              title={`${project.title} demo`}
+              allow="fullscreen; picture-in-picture"
+              allowFullScreen
+              style={{
+                position: "absolute",
+                inset: 0,
+                width: "100%",
+                height: "100%",
+                border: "none",
+                zIndex: 1,
+                background: "#000",
+              }}
+            />
+          ) : project.demo ? (
             <>
               <video
                 ref={videoRef}
@@ -422,18 +449,6 @@ function ProjectModal({
                 padding: 24,
               }}
             >
-              {project.thumb && (
-                <span
-                  aria-hidden="true"
-                  style={{
-                    position: "absolute",
-                    inset: 0,
-                    zIndex: -1,
-                    background:
-                      "linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,.3))",
-                  }}
-                />
-              )}
               <div
                 aria-hidden="true"
                 style={{
@@ -457,7 +472,7 @@ function ProjectModal({
                   fontSize: 12.5,
                   letterSpacing: ".08em",
                   textTransform: "uppercase",
-                  background: "rgba(0,0,0,.25)",
+                  background: "rgba(0,0,0,.55)",
                   padding: "8px 14px",
                   borderRadius: 999,
                   backdropFilter: "blur(4px)",

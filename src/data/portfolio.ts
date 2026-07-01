@@ -45,6 +45,7 @@ export const PROJECTS: Project[] = [
     tags: ["n8n", "LLM", "Booking"],
     grad: ["#2A2BF7", "#B9A3FF"],
     thumb: "/thumbnails/clinic-receptionist.jpg",
+    demo: "https://www.loom.com/share/7d8771ddcf1f49198496a5c2f5e060a8",
   },
   {
     n: "02",
