@@ -1,0 +1,8 @@
+# docker-compose.yml
+services:
+  web:
+    build: .
+    container_name: portfolio-web
+    restart: unless-stopped
+    ports:
+      - "5400:80"
