@@ -101,8 +101,10 @@ img {
   }
 }
 
-/* Scroll reveal: hidden until the observer adds [data-in] */
-[data-reveal] {
+/* Scroll reveal: hidden until the observer adds [data-in].
+   Gated behind .js (set by an inline script in index.html) so the prerendered
+   markup stays visible to crawlers and no-JS visitors. */
+.js [data-reveal] {
   opacity: 0;
   transform: translateY(22px);
   transition:
@@ -111,7 +113,7 @@ img {
   will-change: opacity, transform;
 }
 
-[data-reveal][data-in] {
+.js [data-reveal][data-in] {
   opacity: 1;
   transform: none;
 }

@@ -53,13 +53,13 @@ const CERTS = [
     title: "n8n — Integrations: APIs & Connected",
     meta: "Foundations · 2026",
     href: "https://badges.n8n.io/91fbe357-c565-4e0d-b0c5-532cb33c1eb0#acc.OZMdPz0b",
-    img: "/thumbnails/n8n-integrations-badge.png",
+    img: "/thumbnails/n8n-integrations-badge.webp",
   },
   {
     title: "n8n — Essentials: Your First Workflows",
     meta: "Foundations · 2026",
     href: "https://badges.n8n.io/6071b7bf-37fb-442f-8862-a87aed8ca6b5#acc.CBnzHJsO",
-    img: "/thumbnails/n8n-essentials-badge.png",
+    img: "/thumbnails/n8n-essentials-badge.webp",
   },
 ];
 

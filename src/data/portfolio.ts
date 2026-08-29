@@ -13,7 +13,7 @@ export interface Project {
   /** Two comma-separated hex colours used for the card's gradient thumbnail. */
   grad: [from: string, to: string];
   /**
-   * Optional path/URL to a thumbnail image (e.g. "/thumbnails/aics.png" from
+   * Optional path/URL to a thumbnail image (e.g. "/thumbnails/aics.webp" from
    * public/). Shown on the card preview and as the modal poster. When absent,
    * the gradient is used as the thumbnail.
    */
@@ -44,7 +44,7 @@ export const PROJECTS: Project[] = [
     note: "Persona-locked agent — books appointments and answers questions, never gives medical advice.",
     tags: ["n8n", "LLM", "Booking"],
     grad: ["#2A2BF7", "#B9A3FF"],
-    thumb: "/thumbnails/clinic-receptionist.jpg",
+    thumb: "/thumbnails/clinic-receptionist.webp",
     demo: "https://www.loom.com/share/7d8771ddcf1f49198496a5c2f5e060a8",
   },
   {
@@ -56,7 +56,7 @@ export const PROJECTS: Project[] = [
     note: "90% lower API quota through smart batching; new channels land straight in Google Sheets.",
     tags: ["Search API", "Sheets", "Batching"],
     grad: ["#C8FF3A", "#2A2BF7"],
-    thumb: "/thumbnails/youtube-automation.jpg",
+    thumb: "/thumbnails/youtube-automation.webp",
   },
   {
     n: "03",
@@ -67,7 +67,7 @@ export const PROJECTS: Project[] = [
     note: "DALL·E 3 + GPT-4 Vision write and shoot; async Sora renders stitch the final cut.",
     tags: ["DALL·E 3", "GPT-4V", "Sora"],
     grad: ["#FF5A34", "#B9A3FF"],
-    thumb: "/thumbnails/ugc-generator.jpg",
+    thumb: "/thumbnails/ugc-generator.webp",
   },
   {
     n: "04",
@@ -78,7 +78,7 @@ export const PROJECTS: Project[] = [
     note: "Supabase pgvector retrieval keeps every reply anchored to real docs — no hallucinations.",
     tags: ["RAG", "pgvector", "Claude"],
     grad: ["#2A2BF7", "#C8FF3A"],
-    thumb: "/thumbnails/rag-chatbot.jpg",
+    thumb: "/thumbnails/rag-chatbot.webp",
   },
   {
     n: "05",
@@ -89,7 +89,7 @@ export const PROJECTS: Project[] = [
     note: "Runs every minute, fully unattended — sorts mail and stages a ready-to-send draft.",
     tags: ["Classify", "Draft", "Cron"],
     grad: ["#B9A3FF", "#FF5A34"],
-    thumb: "/thumbnails/ai-inbox-triage.jpg",
+    thumb: "/thumbnails/ai-inbox-triage.webp",
   },
   {
     n: "06",
@@ -100,7 +100,7 @@ export const PROJECTS: Project[] = [
     note: "Three-sided marketplace for customers, vendors and couriers. React Native Expo · Supabase.",
     tags: ["React Native", "Supabase", "Marketplace"],
     grad: ["#FF5A34", "#2A2BF7"],
-    thumb: "/thumbnails/pabakal.jpg",
+    thumb: "/thumbnails/pabakal.webp",
   },
   {
     n: "07",
@@ -111,7 +111,7 @@ export const PROJECTS: Project[] = [
     note: "Real-time, word-level pronunciation scoring so learners hear exactly what to fix.",
     tags: ["Whisper", "Realtime", "Supabase"],
     grad: ["#C8FF3A", "#FF5A34"],
-    thumb: "/thumbnails/ready-read.jpg",
+    thumb: "/thumbnails/ready-read.webp",
   },
   {
     n: "08",
@@ -120,7 +120,7 @@ export const PROJECTS: Project[] = [
     proc: "Wireframes",
     outp: "Hi-fi prototype",
     note: "Flows to a clickable, hi-fi prototype on one coherent design system. Built in Figma.",
-    thumb: "/thumbnails/hris.jpg",
+    thumb: "/thumbnails/hris.webp",
     tags: ["Figma", "Design System", "Prototype"],
     grad: ["#2A2BF7", "#FF5A34"],
   },
