@@ -29,6 +29,8 @@ export function Carousel({ slides, autoAdvanceMs = 4000 }: CarouselProps) {
     <div className="relative w-full overflow-hidden rounded-xl border border-border bg-card group shadow-sm">
       <div className="relative aspect-video">
         <img
+          loading="lazy"
+          decoding="async"
           src={slides[current].src}
           alt={slides[current].caption}
           className="w-full h-full object-cover object-top transition-opacity duration-500"

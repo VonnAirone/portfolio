@@ -86,6 +86,8 @@ function ProjectCard({
         {p.thumb && (
           <>
             <img
+              loading="lazy"
+              decoding="async"
               src={p.thumb}
               alt=""
               aria-hidden="true"
@@ -364,6 +366,8 @@ function ProjectModal({
         >
           {project.thumb && (
             <img
+              loading="lazy"
+              decoding="async"
               src={project.thumb}
               alt=""
               aria-hidden="true"

@@ -173,6 +173,8 @@ export function About() {
               >
                 <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
                   <img
+                    loading="lazy"
+                    decoding="async"
                     src={c.img}
                     alt=""
                     aria-hidden="true"

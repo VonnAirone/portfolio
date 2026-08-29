@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# AI/LLM crawlers — allow, so the site can be cited in AI answers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://vonn-airone.vercel.app/sitemap.xml
