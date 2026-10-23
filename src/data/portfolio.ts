@@ -24,6 +24,8 @@ export interface Project {
    * "Demo coming soon" state instead of a player.
    */
   demo?: string;
+  /** Live website for projects presented as external links. */
+  website?: string;
 }
 
 export interface SkillGroup {
@@ -37,6 +39,30 @@ export interface SkillGroup {
 export const PROJECTS: Project[] = [
   {
     n: "01",
+    title: "Enfinity.com",
+    inp: "Creator platform",
+    proc: "Section design + illustration",
+    outp: "Live Umso website",
+    note: "Designed website sections and illustrations for Enfinity, a platform for creators. Built using Umso.",
+    tags: ["Umso", "Web Design", "Illustration"],
+    grad: ["#703EFF", "#B9A3FF"],
+    thumb: "/thumbnails/enfinity.png",
+    website: "https://www.enfinity.com",
+  },
+  {
+    n: "02",
+    title: "Enfinitask.com",
+    inp: "Team services",
+    proc: "Section design + illustration",
+    outp: "Live Umso website",
+    note: "Designed website sections and illustrations for Enfinitask. Built using Umso.",
+    tags: ["Umso", "Web Design", "Illustration"],
+    grad: ["#2A2BF7", "#B9A3FF"],
+    thumb: "/thumbnails/enfinitask.png",
+    website: "https://enfinitask.com",
+  },
+  {
+    n: "03",
     title: "AI Clinic Receptionist Chatbot",
     inp: "Patient inquiry",
     proc: "n8n + LLM agent",
@@ -48,7 +74,7 @@ export const PROJECTS: Project[] = [
     demo: "https://www.loom.com/share/7d8771ddcf1f49198496a5c2f5e060a8",
   },
   {
-    n: "02",
+    n: "04",
     title: "YouTube Channel Discovery",
     inp: "Keyword",
     proc: "Search & dedupe",
@@ -59,7 +85,7 @@ export const PROJECTS: Project[] = [
     thumb: "/thumbnails/youtube-automation.webp",
   },
   {
-    n: "03",
+    n: "05",
     title: "Automated UGC Video Generator",
     inp: "Product listing",
     proc: "Script · imagery · render",
@@ -70,7 +96,7 @@ export const PROJECTS: Project[] = [
     thumb: "/thumbnails/ugc-generator.webp",
   },
   {
-    n: "04",
+    n: "06",
     title: "RAG Chatbot for Business",
     inp: "Customer question",
     proc: "Vector search + Claude",
@@ -81,7 +107,7 @@ export const PROJECTS: Project[] = [
     thumb: "/thumbnails/rag-chatbot.webp",
   },
   {
-    n: "05",
+    n: "07",
     title: "AI Inbox: Triage & Draft",
     inp: "Incoming email",
     proc: "Classify · draft · schedule",
@@ -92,7 +118,7 @@ export const PROJECTS: Project[] = [
     thumb: "/thumbnails/ai-inbox-triage.webp",
   },
   {
-    n: "06",
+    n: "08",
     title: "Pabakal — Food Delivery App",
     inp: "Customer order",
     proc: "Match & route",
@@ -103,7 +129,7 @@ export const PROJECTS: Project[] = [
     thumb: "/thumbnails/pabakal.webp",
   },
   {
-    n: "07",
+    n: "09",
     title: "Ready Read! — Pronunciation App",
     inp: "Spoken word",
     proc: "Groq Whisper scoring",
@@ -114,7 +140,7 @@ export const PROJECTS: Project[] = [
     thumb: "/thumbnails/ready-read.webp",
   },
   {
-    n: "08",
+    n: "10",
     title: "Health MIS UI Design",
     inp: "User flows",
     proc: "Wireframes",

@@ -48,6 +48,8 @@ function ProjectCard({
   p: Project;
   onOpen: (p: Project) => void;
 }) {
+  const Media = p.website ? "a" : "button";
+
   return (
     <article
       data-reveal
@@ -63,12 +65,15 @@ function ProjectCard({
         willChange: "transform",
       }}
     >
-      <button
-        type="button"
+      <Media
+        type={p.website ? undefined : "button"}
+        href={p.website}
+        target={p.website ? "_blank" : undefined}
+        rel={p.website ? "noopener noreferrer" : undefined}
         className="proj-media"
         data-cursor
-        onClick={() => onOpen(p)}
-        aria-label={`${p.title} — watch demo`}
+        onClick={p.website ? undefined : () => onOpen(p)}
+        aria-label={`${p.title} — ${p.website ? "visit website (opens in a new tab)" : "watch demo"}`}
         style={{
           position: "relative",
           aspectRatio: "16 / 10",
@@ -153,7 +158,7 @@ function ProjectCard({
               boxShadow: "0 12px 32px -10px rgba(0,0,0,.45)",
             }}
           >
-            ▶
+            {p.website ? "↗" : "▶"}
           </span>
         </span>
         <span
@@ -170,9 +175,9 @@ function ProjectCard({
             backdropFilter: "blur(4px)",
           }}
         >
-          ▶ Watch demo
+          {p.website ? "↗ Visit website" : "▶ Watch demo"}
         </span>
-      </button>
+      </Media>
       <div
         style={{
           padding: "22px 22px 24px",
@@ -625,19 +630,8 @@ export function Projects() {
             lineHeight: 1.5,
           }}
         >
-          Eight systems, each a small machine: an{" "}
-          <em style={{ fontFamily: "'Instrument Serif', serif", fontStyle: "italic" }}>
-            input
-          </em>{" "}
-          goes in, a{" "}
-          <em style={{ fontFamily: "'Instrument Serif', serif", fontStyle: "italic" }}>
-            process
-          </em>{" "}
-          does the work, an{" "}
-          <em style={{ fontFamily: "'Instrument Serif', serif", fontStyle: "italic" }}>
-            output
-          </em>{" "}
-          comes out — reliably.
+          A selection of websites, apps, and automations — from section design
+          and illustration to systems that turn inputs into reliable results.
         </p>
       </div>
 
