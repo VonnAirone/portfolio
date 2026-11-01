@@ -9,6 +9,13 @@ interface TimelineItem {
 
 const EXPERIENCE: TimelineItem[] = [
   {
+    period: "2026 — present",
+    title: "Information Officer I",
+    detail:
+      "Cybersecurity PNPKI Unit, Department of Information and Communications Technology",
+    color: "var(--blue)",
+  },
+  {
     period: "2024 — present",
     title: "Freelance — AI Automation & Full-Stack",
     detail: "Agents, pipelines, and apps for clients end-to-end.",
