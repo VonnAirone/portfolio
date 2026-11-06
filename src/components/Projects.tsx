@@ -568,7 +568,22 @@ function ProjectModal({
   );
 }
 
+const PAGE_SIZE = 6;
+
 export function Projects() {
+  const [page, setPage] = useState(0);
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const pageCount = Math.ceil(PROJECTS.length / PAGE_SIZE);
+
+  const changePage = (nextPage: number) => {
+    setPage(nextPage);
+    headingRef.current?.focus({ preventScroll: true });
+    headingRef.current?.scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "instant" : "smooth",
+      block: "start",
+    });
+  };
   const [active, setActive] = useState<Project | null>(null);
   const lastFocus = useRef<HTMLElement | null>(null);
 
@@ -607,9 +622,12 @@ export function Projects() {
             / 01 — Selected work
           </div>
           <h2
+            ref={headingRef}
+            tabIndex={-1}
             data-reveal
             style={{
               margin: 0,
+              scrollMarginTop: 100,
               fontFamily: "'Bricolage Grotesque', sans-serif",
               fontWeight: 700,
               fontSize: "clamp(2.4rem, 6.5vw, 5.5rem)",
@@ -635,18 +653,47 @@ export function Projects() {
         </p>
       </div>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns:
-            "repeat(auto-fill, minmax(min(100%, 340px), 1fr))",
-          gap: "clamp(20px, 2.5vw, 34px)",
-        }}
-      >
-        {PROJECTS.map((p) => (
-          <ProjectCard key={p.n} p={p} onOpen={open} />
-        ))}
-      </div>
+      {Array.from({ length: pageCount }, (_, index) => (
+        <div
+          key={index}
+          id={`project-page-${index + 1}`}
+          hidden={page !== index}
+        >
+          <div className="project-page-grid">
+            {PROJECTS.slice(index * PAGE_SIZE, (index + 1) * PAGE_SIZE).map((p) => (
+              <ProjectCard key={p.n} p={p} onOpen={open} />
+            ))}
+          </div>
+        </div>
+      ))}
+
+      {pageCount > 1 && (
+        <nav className="project-pagination" aria-label="Project pages">
+          <p role="status" aria-live="polite">
+            Showing {page * PAGE_SIZE + 1}–{Math.min((page + 1) * PAGE_SIZE, PROJECTS.length)} of {PROJECTS.length} projects
+          </p>
+          <div className="project-page-controls">
+            <button type="button" disabled={page === 0} onClick={() => changePage(page - 1)}>
+              ← Previous
+            </button>
+            {Array.from({ length: pageCount }, (_, index) => (
+              <button
+                key={index}
+                type="button"
+                aria-label={`Project page ${index + 1}`}
+                aria-current={page === index ? "page" : undefined}
+                aria-controls={`project-page-${index + 1}`}
+                onClick={() => changePage(index)}
+              >
+                {index + 1}
+              </button>
+            ))}
+            <button type="button" disabled={page === pageCount - 1} onClick={() => changePage(page + 1)}>
+              Next →
+            </button>
+          </div>
+        </nav>
+      )}
 
       {active && <ProjectModal project={active} onClose={close} />}
     </section>
