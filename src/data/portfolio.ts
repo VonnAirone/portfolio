@@ -75,6 +75,18 @@ export const PROJECTS: Project[] = [
   },
   {
     n: "04",
+    title: "CreatorShield.com",
+    inp: "Website design",
+    proc: "Web design",
+    outp: "Live website",
+    note: "Designed the website for CreatorShield.",
+    tags: ["Web Design"],
+    grad: ["#2A2BF7", "#B9A3FF"],
+    thumb: "/thumbnails/creatorshield.png",
+    website: "https://www.creatorshield.com",
+  },
+  {
+    n: "05",
     title: "AI Clinic Receptionist Chatbot",
     inp: "Patient inquiry",
     proc: "n8n + LLM agent",
@@ -86,7 +98,7 @@ export const PROJECTS: Project[] = [
     demo: "https://www.loom.com/share/7d8771ddcf1f49198496a5c2f5e060a8",
   },
   {
-    n: "05",
+    n: "06",
     title: "YouTube Channel Discovery",
     inp: "Keyword",
     proc: "Search & dedupe",
@@ -97,7 +109,7 @@ export const PROJECTS: Project[] = [
     thumb: "/thumbnails/youtube-automation.webp",
   },
   {
-    n: "06",
+    n: "07",
     title: "Automated UGC Video Generator",
     inp: "Product listing",
     proc: "Script · imagery · render",
@@ -108,7 +120,7 @@ export const PROJECTS: Project[] = [
     thumb: "/thumbnails/ugc-generator.webp",
   },
   {
-    n: "07",
+    n: "08",
     title: "RAG Chatbot for Business",
     inp: "Customer question",
     proc: "Vector search + Claude",
@@ -119,7 +131,7 @@ export const PROJECTS: Project[] = [
     thumb: "/thumbnails/rag-chatbot.webp",
   },
   {
-    n: "08",
+    n: "09",
     title: "AI Inbox: Triage & Draft",
     inp: "Incoming email",
     proc: "Classify · draft · schedule",
@@ -130,7 +142,7 @@ export const PROJECTS: Project[] = [
     thumb: "/thumbnails/ai-inbox-triage.webp",
   },
   {
-    n: "09",
+    n: "10",
     title: "Pabakal — Food Delivery App",
     inp: "Customer order",
     proc: "Match & route",
@@ -141,7 +153,7 @@ export const PROJECTS: Project[] = [
     thumb: "/thumbnails/pabakal.webp",
   },
   {
-    n: "10",
+    n: "11",
     title: "Ready Read! — Pronunciation App",
     inp: "Spoken word",
     proc: "Groq Whisper scoring",
@@ -152,7 +164,7 @@ export const PROJECTS: Project[] = [
     thumb: "/thumbnails/ready-read.webp",
   },
   {
-    n: "11",
+    n: "12",
     title: "Health MIS UI Design",
     inp: "User flows",
     proc: "Wireframes",
