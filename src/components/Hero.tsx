@@ -393,11 +393,11 @@ export function Hero() {
           </div>
           <div data-reveal>
             <div style={statNumber("var(--coral)")}>
-              <span data-count="90" data-suffix="%">
-                0%
+              <span data-count="3" data-suffix="+">
+                0+
               </span>
             </div>
-            <div style={statLabel}>LESS API QUOTA</div>
+            <div style={statLabel}>YEARS OF EXPERIENCE</div>
           </div>
           <div data-reveal>
             <div style={statNumber("var(--lilac)")}>
